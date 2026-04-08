@@ -23,3 +23,7 @@ api:
   reset: /reset
   step: /step
   state: /state
+env:
+  API_BASE_URL: "https://api.openai.com/v1"
+  MODEL_NAME: "gpt-4"
+  HF_TOKEN: "${HF_TOKEN}"
