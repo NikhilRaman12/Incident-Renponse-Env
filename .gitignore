@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+
+# Gradio/Streamlit artifacts
+.gradio/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependency folders
+node_modules/
+*.egg-info/
+
+# Docker
+*.pid
+*.sock
+
+# Hugging Face / model checkpoints
+*.bin
+*.pt
+*.ckpt
