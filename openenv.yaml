@@ -1,0 +1,25 @@
+name: incident-response-env
+version: 1.0.0
+description: >
+  Simulates real-world incident response workflows: alert classification,
+  root cause analysis, and runbook generation.
+tasks:
+  - id: alert_classification
+    difficulty: easy
+    action_space: json
+    observation_space: json
+    reward_range: [0.0, 1.0]
+  - id: root_cause_analysis
+    difficulty: medium
+    action_space: json
+    observation_space: json
+    reward_range: [0.0, 1.0]
+  - id: runbook_generation
+    difficulty: hard
+    action_space: json
+    observation_space: json
+    reward_range: [0.0, 1.0]
+api:
+  reset: /reset
+  step: /step
+  state: /state
