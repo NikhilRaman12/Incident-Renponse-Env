@@ -26,6 +26,9 @@ def run_task(task):
         f"{API_BASE_URL}/reset",
         json={"task_type": task, "seed": 42}
     )
+    if res.status_code == 404:
+        print(f"[ERROR] Reset failed for task {task}: {res.text}")
+        return
     res.raise_for_status()
     data = res.json()
     session_id = data.get("session_id")
@@ -43,6 +46,9 @@ def run_task(task):
             f"{API_BASE_URL}/step",
             json={"session_id": session_id, "action": action}
         )
+        if res.status_code == 404:
+            print(f"[ERROR] Step failed for task {task}: {res.text}")
+            return
         res.raise_for_status()
         result = res.json()
         done = result.get("done", False)
